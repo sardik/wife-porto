@@ -44,8 +44,8 @@ export default function RootLayout({
       data-loading="true"
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-background text-foreground">
-        <div className="flex min-h-full flex-col">
+      <body className="min-h-full bg-background text-foreground overflow-x-clip">
+        <div className="flex min-h-full flex-col overflow-x-clip">
           <RouteLoader />
           <ScrollReveal />
           <SiteHeader />
