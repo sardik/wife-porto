@@ -48,16 +48,16 @@ export function MediaSharing() {
             >
               <CarouselContent className="-ml-4">
                 {TIKTOKS.map((url, i) => (
-                  <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={i} className="pl-4 basis-[92%] sm:basis-1/2 lg:basis-1/3">
                     <div className="flex h-full justify-center overflow-hidden rounded-2xl border border-border bg-muted/30 p-2">
                       <TikTokEmbed url={url} width="100%" height={445} />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="mt-8 flex justify-end gap-2 pr-2">
-                <CarouselPrevious className="static translate-y-0" />
-                <CarouselNext className="static translate-y-0" />
+              <div className="mt-6 flex justify-center sm:justify-end gap-2 pr-2">
+                <CarouselPrevious className="static translate-y-0 h-9 w-9 sm:h-10 sm:w-10" />
+                <CarouselNext className="static translate-y-0 h-9 w-9 sm:h-10 sm:w-10" />
               </div>
             </Carousel>
           </div>
@@ -65,10 +65,15 @@ export function MediaSharing() {
           {/* YouTube Grid */}
           <div>
             <h3 className="mb-8 text-xl font-medium tracking-tight">YouTube</h3>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {YOUTUBES.map((url, i) => (
                 <div key={i} className="flex justify-center overflow-hidden rounded-2xl border border-border bg-muted/30 p-2 lg:p-4">
-                  <YouTubeEmbed url={url} width="100%" height={315} />
+                  <div className="w-full aspect-video sm:hidden">
+                    <YouTubeEmbed url={url} width="100%" height={220} />
+                  </div>
+                  <div className="hidden sm:block w-full">
+                    <YouTubeEmbed url={url} width="100%" height={315} />
+                  </div>
                 </div>
               ))}
             </div>
